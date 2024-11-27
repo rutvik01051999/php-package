@@ -1,11 +1,11 @@
 {
-    "name": "vendor/package-demo",
-    "description": "demo",
+    "name": "demovendor/demo-package",
+    "description": "NA",
     "type": "library",
     "license": "mit",
     "autoload": {
         "psr-4": {
-            "Vendor\\PackageDemo\\": "src/"
+            "Demovendor\\DemoPackage\\": "src/"
         }
     },
     "authors": [

@@ -1,6 +1,6 @@
 <?php
 
-use Vendor\DemoPackage\DemoPackage;
+use Demovendor\DemoPackage\DemoPackage;
 use PHPUnit\Framework\TestCase;
 
 class DemoPackageTest extends TestCase {

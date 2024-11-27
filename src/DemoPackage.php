@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\DemoPackage;
+namespace Demovendor\DemoPackage;
 
 class DemoPackage {
     public function greet($name) {
