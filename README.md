@@ -1,4 +1,4 @@
-# My Awesome Package
+# Demo Package
 
 This package provides a simple greeting functionality.
 
