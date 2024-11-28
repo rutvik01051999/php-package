@@ -9,9 +9,7 @@
         }
     }, 
     "scripts": { 
-    "post-package-install": [
-      "Demovendor\\DemoPackage\\DemoPackage::generateConfig"
-    ]
+   
     },
     "authors": [
         {
