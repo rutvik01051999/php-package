@@ -24,7 +24,7 @@ class ConfigGenerator
             echo "Config file already exists. Skipping creation.\n";
             return;
         }
-
+ 
         // Copy the default config to the target config directory
         if (copy($sourceFile, $destinationFile)) {
             echo "Config file created at {$destinationFile}.\n";

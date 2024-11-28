@@ -8,7 +8,7 @@
             "Demovendor\\DemoPackage\\": "src/"
         }
     },
-    "scripts": {
+    "scripts": { 
     "post-install-cmd": [
       "Demovendor\\DemoPackage\\DemoPackage::generateConfig"
     ]

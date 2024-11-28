@@ -13,7 +13,7 @@ class DemoPackage {
     // }
 
     public static function generateConfig()
-    {
+    { 
         // Define the path to the config directory in the user's Laravel or PHP project
         $configPath = __DIR__ . '/../../../../config';  // Adjust according to your target directory
 
