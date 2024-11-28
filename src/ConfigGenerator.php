@@ -13,7 +13,7 @@ class ConfigGenerator
     /**
      * Automatically generate the configuration file if it doesn't exist.
      *
-     * @return void
+     * @return void 
      */
     public function autoGenerateConfig()
     {
