@@ -8,6 +8,13 @@
             "Demovendor\\DemoPackage\\": "src/"
         }
     }, 
+    "extra": {
+            "laravel": {
+                "providers": [
+                    "Demovendor\\DemoPackage\\DemoPackageServiceProvider"
+                ]
+            }
+        },
     "scripts": { 
    
     },
