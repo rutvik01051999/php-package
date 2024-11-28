@@ -1,14 +1,11 @@
 <?php
 
 namespace Demovendor\DemoPackage;
+use Demovendor\DemoPackage\ConfigGenerator;  // Make sure the class is imported
 
 
 class DemoPackage { 
 
-/*************  ✨ Codeium Command ⭐  *************/
-    /**
-     * Initialize the package and automatically generate the configuration file
-/******  979f017b-4f6f-4207-91a6-3fe11ce08e43  *******/
     public function __construct() 
     {
         $this->autoGenerateConfig();
@@ -26,6 +23,7 @@ class DemoPackage {
         $configPath = __DIR__ . '/../../../../config';  // Path to the config directory of the user's project
 
         // Create an instance of the ConfigGenerator and run the config generation
+        include '../src/ConfigGenerator.php';
         $configGenerator = new ConfigGenerator($configPath);
         $configGenerator->autoGenerateConfig();
     }
