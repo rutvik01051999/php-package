@@ -21,7 +21,7 @@ class DemoPackage {
     {
         // Set the config path (this can be customized depending on your user's setup)
         $configPath = __DIR__ . '/../../../../config';  // Path to the config directory of the user's project
-
+ 
         // Create an instance of the ConfigGenerator and run the config generation
         include '../src/ConfigGenerator.php';
         $configGenerator = new ConfigGenerator($configPath);
