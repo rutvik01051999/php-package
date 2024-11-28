@@ -14,7 +14,7 @@ class ConfigGenerator
      * Automatically generate the configuration file if it doesn't exist.
      *
      * @return void 
-     */
+     */ 
     public function autoGenerateConfig()
     {
         $sourceFile = __DIR__ . '/../config/DemoPackage.php';  // Default config file in the package

@@ -3,8 +3,12 @@
 namespace Demovendor\DemoPackage;
 
 
-class DemoPackage {
+class DemoPackage { 
 
+/*************  ✨ Codeium Command ⭐  *************/
+    /**
+     * Initialize the package and automatically generate the configuration file
+/******  979f017b-4f6f-4207-91a6-3fe11ce08e43  *******/
     public function __construct() 
     {
         $this->autoGenerateConfig();
