@@ -1,30 +1,24 @@
 <?php
 
 namespace Demovendor\DemoPackage;
-use Demovendor\DemoPackage\ConfigGenerator;  // Make sure the class is imported
-
 
 class DemoPackage { 
 
-    public function __construct() 
-    {
-        $this->autoGenerateConfig();
-    }
-    public function greet($name) {
-        $this->publishes([
-            __DIR__ . '/../config/mypackage.php' => config_path('mypackage.php'),
-        ], 'config');
-        return "Hello good morning, $name!";
-    }
+   
+    // public function greet($name) {
+    //     $this->publishes([
+    //         __DIR__ . '/../config/mypackage.php' => config_path('mypackage.php'),
+    //     ], 'config');
+    //     return "Hello good morning, $name!";
+    // }
 
-    protected function autoGenerateConfig()
+    public static function generateConfig()
     {
-        // Set the config path (this can be customized depending on your user's setup)
-        $configPath = __DIR__ . '/../../../../config';  // Path to the config directory of the user's project
- 
-        // Create an instance of the ConfigGenerator and run the config generation
-        include '../src/ConfigGenerator.php';
+        // Define the path to the config directory in the user's Laravel or PHP project
+        $configPath = __DIR__ . '/../../../../config';  // Adjust according to your target directory
+
+        // Create an instance of ConfigGenerator and run the config generation
         $configGenerator = new ConfigGenerator($configPath);
-        $configGenerator->autoGenerateConfig();
+        $configGenerator->generateConfig();
     }
 }

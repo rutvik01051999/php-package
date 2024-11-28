@@ -8,6 +8,11 @@
             "Demovendor\\DemoPackage\\": "src/"
         }
     },
+    "scripts": {
+    "post-install-cmd": [
+      "Demovendor\\DemoPackage\\DemoPackage::generateConfig"
+    ]
+    },
     "authors": [
         {
             "name": "Rutvik Mohite",
