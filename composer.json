@@ -7,7 +7,7 @@
         "psr-4": {
             "Demovendor\\DemoPackage\\": "src/"
         }
-    },
+    }, 
     "scripts": { 
     "post-package-install": [
       "Demovendor\\DemoPackage\\DemoPackage::generateConfig"
