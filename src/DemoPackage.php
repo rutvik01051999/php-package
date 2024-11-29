@@ -48,21 +48,20 @@ class DemoPackage
         ];
 
         // Extract guid
-        $result['guid'] = (string)$xmlData[1]->guid;
+        $result['guid'] = (string)$xmlData->guid;
 
         // Iterate over eligible buyers to find group_number 1
-        foreach ($xmlData[1]->eligible_buyers->group as $group) {
-            if ((string)$group->group_number === "1") { // Check for group_number 1
+        foreach ($xmlData->eligible_buyers->group as $group) {
+            if ((string)$group->group_number === "1") { 
                 $result['buyerContractId']   = (string)$group->positions->position->buyer_contract_id;
                 $result['consentOptionName'] = (string)$group->positions->position->consent_option_name;
-                break; // Exit loop since we found the desired group
+                break; 
             }
         }
 
-        // Return the result array
         return $result;
     }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             echo "Caught exception: " . $e->getMessage();
         }
     }
@@ -96,7 +95,7 @@ class DemoPackage
             // Send the request and get the result
             $response = $buyerListApiClient->sendRequest($baseUrl, $params);
             echo $response;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             echo "Caught exception: " . $e->getMessage();
         }
     }
