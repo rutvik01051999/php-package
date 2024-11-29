@@ -60,7 +60,8 @@ class DemoPackage
         }
 
         // Return the result array
-        return json_encode($result);}
+        return $result;
+    }
         catch (Exception $e) {
             echo "Caught exception: " . $e->getMessage();
         }
