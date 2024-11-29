@@ -8,13 +8,6 @@
             "Demovendor\\DemoPackage\\": "src/"
         }
     }, 
-    "extra": {
-            "laravel": {
-                "providers": [
-                    "Demovendor\\DemoPackage\\DemoPackageServiceProvider"
-                ]
-            }
-        },
     "scripts": { 
           "generate-config": "php generate-config.php"  
     },
