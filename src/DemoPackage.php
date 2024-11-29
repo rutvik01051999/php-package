@@ -68,7 +68,7 @@ class DemoPackage
     public function getRequest($data)
     {
         $config = require '../config/appkey.php';
-        $baseUrl = $config['api_url'];
+        $baseUrl = $config['app_url'];
         return $baseUrl;
         try {
             // $config = require '../config/appkey.php';
@@ -86,7 +86,7 @@ class DemoPackage
             ];
 
             // Base URL
-            // $baseUrl = $config['api_url'];
+            // $baseUrl = $config['app_url'];
 
             // Send the request and get the result
             $response = $buyerListApiClient->sendRequest($baseUrl, $params);
