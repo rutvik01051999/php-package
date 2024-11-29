@@ -69,7 +69,7 @@ class DemoPackage
     {
         $config = require '../config/appkey.php';
         $baseUrl = $config['app_url'];
-        return $baseUrl;
+        echo $baseUrl;
         try {
             // $config = require '../config/appkey.php';
             $buyerListApiClient = new DemoPackage();
