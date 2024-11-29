@@ -76,26 +76,11 @@ class DemoPackage
         ];
 
         // Base URL
-        $baseUrl = 'https://flmtrk.com/d.ashx';
+        // $baseUrl = 'https://flmtrk.com/d.ashx';
+        $baseUrl = $data['api_url'];
 
         // Send the request and get the result
         $response = $buyerListApiClient->sendRequest($baseUrl, $params);
         echo $response;
-    }
-
-    public function generate(array $config): void
-    {
-
-        $config = [
-            'database' => [
-                'host' => 'localhost',
-                'username' => 'root',
-                'password' => '',
-                'database' => 'test_db',
-            ],
-            'app_name' => 'My Application',
-        ];
-        $content = "<?php\n\nreturn " . var_export($config, true) . ";\n";
-        file_put_contents(__DIR__ . '/generated-config.php', $content);
     }
 }
