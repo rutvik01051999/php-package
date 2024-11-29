@@ -67,26 +67,30 @@ class DemoPackage
     }
     public function getRequest($data)
     {
-        $config = require '../config/appkey.php';
-        $baseUrl = $config['app_url'];
-        echo $baseUrl;
+
         try {
-            // $config = require '../config/appkey.php';
+            $config = require '../config/appkey.php';
             $buyerListApiClient = new DemoPackage();
             $params = [
-                // Just for testing POC we pass these values dynamically.
-                'ckm_campaign_id' => $data['ckm_campaign_id'],
-                'ckm_key'         => $data['ckm_key'],
-                'ckm_offer_id'    => $data['ckm_offer_id'],
-                'state'           => $data['state'],
-                'email_address'   => $data['email_address'],
-                'first_name'      => $data['first_name'],
-                'Last_name'       => $data['last_name'],
-                'tax_debt'        => $data['tax_debt']
+                'ckm_offer_id'    => isset($data['ckm_offer_id']) ? $data['ckm_offer_id'] : '',
+                'state'           => isset($data['state']) ? $data['state'] : '',
+                'email_address'   => isset($data['email_address']) ? $data['email_address'] : '',
+                'first_name'      => isset($data['first_name']) ? $data['first_name'] : '',
+                'Last_name'       => isset($data['last_name']) ? $data['last_name'] : '',
+                'tax_debt'        => isset($data['tax_debt']) ? $data['tax_debt'] : '',
             ];
 
+            if(isset($config['cake_post'])){
+                if($config['cake_post'] == 'server_post'){
+                   $params['ckm_campaign_id'] = isset($data['ckm_campaign_id']) ? $data['ckm_campaign_id'] : '';
+                   $params['ckm_key'] = isset($data['ckm_key']) ? $data['ckm_key'] : '';
+                }else{
+                    $params['ckm_request_id']= isset($data['ckm_request_id']) ? $data['ckm_request_id'] : '';
+                }
+            }
+
             // Base URL
-            // $baseUrl = $config['app_url'];
+            $baseUrl = $config['app_url'];
 
             // Send the request and get the result
             $response = $buyerListApiClient->sendRequest($baseUrl, $params);

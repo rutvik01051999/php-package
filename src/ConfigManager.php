@@ -10,7 +10,7 @@ class ConfigManager
     {
         
         try {
-            $data = ['app_url' => '', 'cake_post' => ''];
+            $data = ['app_url' => '', 'cake_post' => 'server_post'];
             $configFilePath = './config/appkey.php';
             $configContent = "<?php\n\nreturn " . var_export($data, true) . ";\n";
             file_put_contents($configFilePath, $configContent);
