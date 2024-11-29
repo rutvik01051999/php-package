@@ -69,7 +69,8 @@ class DemoPackage
     {
 
         try {
-            $config = require '../config/appkey.php';
+            $configPath = dirname(__DIR__, 4).'/config/appkey.php';
+            $config = require $configPath;
             $buyerListApiClient = new DemoPackage();
             $params = [
                 'ckm_offer_id'    => isset($data['ckm_offer_id']) ? $data['ckm_offer_id'] : '',

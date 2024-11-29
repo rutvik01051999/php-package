@@ -15,5 +15,5 @@ composer require demovendor/demo-package
 use Demovendor\DemoPackage\DemoPackage;
 
 $package = new DemoPackage();
-echo $package->greet("Rutvik");
+$package->getRequest('Data in array');
  
