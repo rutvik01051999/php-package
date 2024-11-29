@@ -4,7 +4,9 @@ namespace Demovendor\DemoPackage;
 
 class DemoPackage
 {
-    public function sendRequest($baseUrl, $params = []) {
+    public function sendRequest($baseUrl, $params = [])
+    {
+        try{
         $queryString = http_build_query($params);
         $url         = $baseUrl . '?' . $queryString;
         $curl        = curl_init();
@@ -58,29 +60,39 @@ class DemoPackage
         }
 
         // Return the result array
-        return json_encode($result);
+        return json_encode($result);}
+        catch (Exception $e) {
+            echo "Caught exception: " . $e->getMessage();
+        }
     }
     public function getRequest($data)
     {
-        $buyerListApiClient = new DemoPackage();
-        $params = [
-            // Just for testing POC we pass these values dynamically.
-            'ckm_campaign_id' => $data['ckm_campaign_id'],
-            'ckm_key'         => $data['ckm_key'],
-            'ckm_offer_id'    => $data['ckm_offer_id'],
-            'state'           => $data['state'],
-            'email_address'   => $data['email_address'],
-            'first_name'      => $data['first_name'],
-            'Last_name'       => $data['last_name'],
-            'tax_debt'        => $data['tax_debt']
-        ];
+        $config = require '../config/appkey.php';
+        $baseUrl = $config['api_url'];
+        return $baseUrl;
+        try {
+            // $config = require '../config/appkey.php';
+            $buyerListApiClient = new DemoPackage();
+            $params = [
+                // Just for testing POC we pass these values dynamically.
+                'ckm_campaign_id' => $data['ckm_campaign_id'],
+                'ckm_key'         => $data['ckm_key'],
+                'ckm_offer_id'    => $data['ckm_offer_id'],
+                'state'           => $data['state'],
+                'email_address'   => $data['email_address'],
+                'first_name'      => $data['first_name'],
+                'Last_name'       => $data['last_name'],
+                'tax_debt'        => $data['tax_debt']
+            ];
 
-        // Base URL
-        // $baseUrl = 'https://flmtrk.com/d.ashx';
-        $baseUrl = $data['api_url'];
+            // Base URL
+            // $baseUrl = $config['api_url'];
 
-        // Send the request and get the result
-        $response = $buyerListApiClient->sendRequest($baseUrl, $params);
-        echo $response;
+            // Send the request and get the result
+            $response = $buyerListApiClient->sendRequest($baseUrl, $params);
+            echo $response;
+        } catch (Exception $e) {
+            echo "Caught exception: " . $e->getMessage();
+        }
     }
 }
